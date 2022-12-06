@@ -16,11 +16,13 @@ public class Publisher {
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
 private Long Id;
+
 private String addressline1;
 private String city;
 private String state;
-private int zip;
+private String zip;
 
+//One Publisher has many Books
 @OneToMany
 @JoinColumn(name = "publisher_id")
 private Set<Book> books = new HashSet<>();
@@ -29,7 +31,7 @@ public Publisher() {
 }
 
 
-public Publisher(String addressline1, String city, String state, int zip) {
+public Publisher(String addressline1, String city, String state, String zip) {
     this.addressline1 = addressline1;
     this.city = city;
     this.state = state;
@@ -61,10 +63,10 @@ public String getState() {
 public void setState(String state) {
     this.state = state;
 }
-public int getZip() {
+public String getZip() {
     return zip;
 }
-public void setZip(int zip) {
+public void setZip(String zip) {
     this.zip = zip;
 }
 

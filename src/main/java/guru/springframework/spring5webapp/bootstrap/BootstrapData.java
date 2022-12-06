@@ -36,7 +36,7 @@ public class BootstrapData implements CommandLineRunner {
         pub1.setAddressline1("address1");
         pub1.setCity("city1");
         pub1.setState("state1");
-        pub1.setZip(35235);
+        pub1.setZip("35235");
 
         publisherRepository.save(pub1);
 
@@ -48,12 +48,10 @@ public class BootstrapData implements CommandLineRunner {
 
         ddd.setPublisher(pub1);
         pub1.getBooks().add(ddd);
-        // publisherRepository.save(pub1);
 
         authorRepository.save(eric);
         bookRepository.save(ddd);
         publisherRepository.save(pub1);
-
 
         Author rod = new Author("Rod", "Johnson");
         Book noEJB = new Book("J2EE Development without EJB", "39393939");
@@ -63,12 +61,11 @@ public class BootstrapData implements CommandLineRunner {
 
         noEJB.setPublisher(pub1);
         pub1.getBooks().add(noEJB);
-        // publisherRepository.save(pub1);
 
+        //The placements of the saves() matter for some reason - error occurs when publisher save() is in the wrong spot
         authorRepository.save(rod);
         bookRepository.save(noEJB);
         publisherRepository.save(pub1);
-
 
         System.out.println("Number of Books: " + bookRepository.count());
         System.out.println("Number of Publishers: " + publisherRepository.count());

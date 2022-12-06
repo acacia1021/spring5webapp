@@ -21,6 +21,7 @@ public class Book {
     private String title;
     private String isbn;
 
+    //Many Books have One Publisher
     @ManyToOne
     private Publisher publisher;
 
