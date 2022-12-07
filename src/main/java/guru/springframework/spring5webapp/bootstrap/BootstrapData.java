@@ -33,6 +33,7 @@ public class BootstrapData implements CommandLineRunner {
 
 
         Publisher pub1 = new Publisher();
+        pub1.setName("publisher1");
         pub1.setAddressline1("address1");
         pub1.setCity("city1");
         pub1.setState("state1");

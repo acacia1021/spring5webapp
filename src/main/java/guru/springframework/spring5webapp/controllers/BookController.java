@@ -27,7 +27,7 @@ public String getBooks(Model model){
     //For the model, add the attribute called 'books' & execute bookRepository
 model.addAttribute("books", bookRepository.findAll());
 
-    return "books";
+    return "books/list";
 }
 
 }

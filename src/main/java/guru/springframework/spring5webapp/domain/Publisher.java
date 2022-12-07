@@ -18,6 +18,7 @@ public class Publisher {
 private Long Id;
 
 private String addressline1;
+private String name;
 private String city;
 private String state;
 private String zip;
@@ -31,7 +32,8 @@ public Publisher() {
 }
 
 
-public Publisher(String addressline1, String city, String state, String zip) {
+public Publisher(String name, String addressline1, String city, String state, String zip) {
+    this.name = name;
     this.addressline1 = addressline1;
     this.city = city;
     this.state = state;
@@ -45,6 +47,7 @@ public Long getId() {
 public void setId(Long id) {
     Id = id;
 }
+
 public String getAddressline1() {
     return addressline1;
 }
@@ -98,10 +101,13 @@ public boolean equals(Object obj) {
 }
 
 
+
+
+
 @Override
 public String toString() {
-    return "Publisher [Id=" + Id + ", addressline1=" + addressline1 + ", city=" + city + ", state=" + state + ", zip="
-            + zip + "]";
+    return "Publisher [Id=" + Id + ", addressline1=" + addressline1 + ", name=" + name + ", city=" + city + ", state="
+            + state + ", zip=" + zip + ", books=" + books + "]";
 }
 
 
@@ -112,6 +118,16 @@ public Set<Book> getBooks() {
 
 public void setBooks(Set<Book> books) {
     this.books = books;
+}
+
+
+public String getName() {
+    return name;
+}
+
+
+public void setName(String name) {
+    this.name = name;
 }
     
 
